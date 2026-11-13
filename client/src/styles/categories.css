@@ -1,0 +1,1 @@
+.categories-page>p:not(.eyebrow){max-width:600px;color:var(--muted);line-height:1.7;margin-bottom:42px}.categories-page .category-grid{grid-template-columns:repeat(3,1fr)}@media(max-width:760px){.categories-page .category-grid{grid-template-columns:1fr}}

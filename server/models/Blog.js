@@ -1,0 +1,4 @@
+import mongoose from 'mongoose';
+const blogSchema = new mongoose.Schema({ title: { type: String, required: true, trim: true }, slug: { type: String, required: true, unique: true }, shortDescription: { type: String, required: true }, content: { type: String, required: true }, featuredImage: { url: String, publicId: String, alt: String }, author: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: true }, tags: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tag' }], status: { type: String, enum: ['draft', 'published', 'unpublished', 'scheduled'], default: 'draft' }, seoTitle: String, metaDescription: String, publishedAt: Date, scheduledAt: Date, featured: { type: Boolean, default: false } }, { timestamps: true });
+blogSchema.index({ title: 'text', shortDescription: 'text', content: 'text' });
+export default mongoose.model('Blog', blogSchema);

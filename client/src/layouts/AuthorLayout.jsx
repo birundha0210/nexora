@@ -1,0 +1,4 @@
+import React from 'react';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'; import '../styles/author-layout.css';
+const links = [['/author','Dashboard'],['/author/create-post','Create New Post'],['/author/posts','All Posts'],['/author/published','Published'],['/author/unpublished','Unpublished'],['/author/drafts','Drafts'],['/author/scheduled','Scheduled']];
+export default function AuthorLayout() { const navigate = useNavigate(); const logout=()=>{localStorage.clear();navigate('/');}; return <div className="portal"><aside><div className="portal-brand">NEXORA <small>AUTHOR STUDIO</small></div><nav>{links.map(([to,label])=><NavLink key={to} end={to==='/author'} to={to}>{label}</NavLink>)}</nav><button onClick={logout}>Logout</button></aside><section className="portal-content"><Outlet/></section></div>; }

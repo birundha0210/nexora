@@ -1,0 +1,2 @@
+import Blog from '../models/Blog.js';
+export async function sitemapXml(baseUrl) { const posts = await Blog.find({ status: 'published', publishedAt: { $lte: new Date() } }).select('slug updatedAt'); const urls = posts.map((post) => `<url><loc>${baseUrl}/blogs/${post.slug}</loc><lastmod>${post.updatedAt.toISOString()}</lastmod></url>`).join(''); return `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${baseUrl}/</loc></url>${urls}</urlset>`; }
