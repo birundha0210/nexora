@@ -1,3 +1,44 @@
-import React from 'react';
-import { useState } from 'react';import api from '../../services/api';import '../../styles/media.css';
-export default function Media(){const [file,setFile]=useState(),[result,setResult]=useState('');const upload=async e=>{e.preventDefault();if(!file)return; if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>5*1024*1024)return setResult('Use a JPG, PNG, or WebP image smaller than 5 MB.');const fd=new FormData();fd.append('image',file);try{const r=await api.post('/media/upload',fd);setResult(`Uploaded: ${r.data.image.url}`)}catch(e){setResult(e.response?.data?.message||'Upload failed');}};return <section className="media-page"><p className="eyebrow">ASSET LIBRARY</p><h1>Media</h1><form onSubmit={upload}><input type="file" accept="image/jpeg,image/png,image/webp" onChange={e=>setFile(e.target.files[0])}/><button className="button">Upload image</button></form><p>{result}</p><small>Images are optimized and stored securely in Cloudinary. GIF and SVG uploads are not accepted.</small></section>}
+import React from "react";
+import { useState } from "react";
+import api from "../../services/api";
+import "../../styles/media.css";
+export default function Media() {
+  const [file, setFile] = useState(),
+    [result, setResult] = useState("");
+  const upload = async (e) => {
+    e.preventDefault();
+    if (!file) return;
+    if (
+      !["image/jpeg", "image/png", "image/webp"].includes(file.type) ||
+      file.size > 5 * 1024 * 1024
+    )
+      return setResult("Use a JPG, PNG, or WebP image smaller than 5 MB.");
+    const fd = new FormData();
+    fd.append("image", file);
+    try {
+      const r = await api.post("/media/upload", fd);
+      setResult(`Uploaded: ${r.data.image.url}`);
+    } catch (e) {
+      setResult(e.response?.data?.message || "Upload failed");
+    }
+  };
+  return (
+    <section className="media-page">
+      <p className="eyebrow">ASSET LIBRARY</p>
+      <h1>Media</h1>
+      <form onSubmit={upload}>
+        <input
+          type="file"
+          accept="image/jpeg,image/png,image/webp"
+          onChange={(e) => setFile(e.target.files[0])}
+        />
+        <button className="button">Upload image</button>
+      </form>
+      <p>{result}</p>
+      <small>
+        Images are optimized and stored securely in Cloudinary. GIF and SVG
+        uploads are not accepted.
+      </small>
+    </section>
+  );
+}

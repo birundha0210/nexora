@@ -1,1 +1,10 @@
-import { Router } from 'express'; import * as c from '../controllers/tagController.js'; import { protect } from '../middleware/authMiddleware.js'; import { allowRoles } from '../middleware/roleMiddleware.js'; const router = Router(); router.get('/', protect, c.listTags); router.post('/', protect, allowRoles('admin'), c.createTag); router.put('/:id', protect, allowRoles('admin'), c.updateTag); router.delete('/:id', protect, allowRoles('admin'), c.deleteTag); export default router;
+import { Router } from "express";
+import * as c from "../controllers/tagController.js";
+import { protect } from "../middleware/authMiddleware.js";
+import { allowRoles } from "../middleware/roleMiddleware.js";
+const router = Router();
+router.get("/", protect, c.listTags);
+router.post("/", protect, allowRoles("admin"), c.createTag);
+router.put("/:id", protect, allowRoles("admin"), c.updateTag);
+router.delete("/:id", protect, allowRoles("admin"), c.deleteTag);
+export default router;

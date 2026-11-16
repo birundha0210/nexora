@@ -1,1 +1,32 @@
-.listing,.categories-page{padding:74px max(7vw,38px)}.listing h1,.categories-page h1{font-size:clamp(38px,5vw,62px);letter-spacing:-.06em;margin:0 0 27px}.listing .search-bar{margin-bottom:24px}.filter-row{display:flex;gap:10px;overflow:auto;padding-bottom:32px}.filter-row button{white-space:nowrap;background:#fff;border:1px solid var(--line);padding:9px 13px;color:var(--navy);font-size:12px}.filter-row .active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.listing,
+.categories-page {
+  padding: 74px max(7vw, 38px);
+}
+.listing h1,
+.categories-page h1 {
+  font-size: clamp(38px, 5vw, 62px);
+  letter-spacing: -0.06em;
+  margin: 0 0 27px;
+}
+.listing .search-bar {
+  margin-bottom: 24px;
+}
+.filter-row {
+  display: flex;
+  gap: 10px;
+  overflow: auto;
+  padding-bottom: 32px;
+}
+.filter-row button {
+  white-space: nowrap;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 9px 13px;
+  color: var(--navy);
+  font-size: 12px;
+}
+.filter-row .active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}

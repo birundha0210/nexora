@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import api from '../../services/api';
-import '../../styles/admin-categories.css';
+import React, { useEffect, useState } from "react";
+import api from "../../services/api";
+import "../../styles/admin-categories.css";
 
 export default function Categories() {
   const [categories, setCategories] = useState([]);
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   const load = async () => {
     try {
-      const response = await api.get('/categories');
+      const response = await api.get("/categories");
       setCategories(response.data.categories || []);
     } catch (error) {
-      console.error('Failed to load categories:', error);
+      console.error("Failed to load categories:", error);
     }
   };
 
@@ -23,11 +23,11 @@ export default function Categories() {
     e.preventDefault();
 
     try {
-      await api.post('/categories', { name });
-      setName('');
+      await api.post("/categories", { name });
+      setName("");
       await load();
     } catch (error) {
-      console.error('Failed to add category:', error);
+      console.error("Failed to add category:", error);
     }
   };
 
@@ -36,7 +36,7 @@ export default function Categories() {
       await api.delete(`/categories/${id}`);
       await load();
     } catch (error) {
-      console.error('Failed to delete category:', error);
+      console.error("Failed to delete category:", error);
     }
   };
 
@@ -65,10 +65,7 @@ export default function Categories() {
             <small>{category.slug}</small>
           </span>
 
-          <button
-            type="button"
-            onClick={() => remove(category._id)}
-          >
+          <button type="button" onClick={() => remove(category._id)}>
             Delete
           </button>
         </div>

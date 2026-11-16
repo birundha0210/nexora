@@ -1,1 +1,40 @@
-import { Router } from 'express'; import { listPublic, getPublic, listManaged, getManagedPost, createPost, updatePost, deletePost } from '../controllers/blogController.js'; import { protect } from '../middleware/authMiddleware.js'; import { allowRoles } from '../middleware/roleMiddleware.js'; import { ensureOwnership } from '../middleware/ownershipMiddleware.js'; const router = Router(); router.get('/public', listPublic); router.get('/public/:slug', getPublic); router.get('/', protect, allowRoles('admin', 'author'), listManaged); router.get('/:id', protect, allowRoles('admin', 'author'), ensureOwnership, getManagedPost); router.post('/', protect, allowRoles('admin', 'author'), createPost); router.put('/:id', protect, allowRoles('admin', 'author'), ensureOwnership, updatePost); router.delete('/:id', protect, allowRoles('admin', 'author'), ensureOwnership, deletePost); export default router;
+import { Router } from "express";
+import {
+  listPublic,
+  getPublic,
+  listManaged,
+  getManagedPost,
+  createPost,
+  updatePost,
+  deletePost,
+} from "../controllers/blogController.js";
+import { protect } from "../middleware/authMiddleware.js";
+import { allowRoles } from "../middleware/roleMiddleware.js";
+import { ensureOwnership } from "../middleware/ownershipMiddleware.js";
+const router = Router();
+router.get("/public", listPublic);
+router.get("/public/:slug", getPublic);
+router.get("/", protect, allowRoles("admin", "author"), listManaged);
+router.get(
+  "/:id",
+  protect,
+  allowRoles("admin", "author"),
+  ensureOwnership,
+  getManagedPost,
+);
+router.post("/", protect, allowRoles("admin", "author"), createPost);
+router.put(
+  "/:id",
+  protect,
+  allowRoles("admin", "author"),
+  ensureOwnership,
+  updatePost,
+);
+router.delete(
+  "/:id",
+  protect,
+  allowRoles("admin", "author"),
+  ensureOwnership,
+  deletePost,
+);
+export default router;

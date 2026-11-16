@@ -1,1 +1,121 @@
-.post-editor{max-width:850px}.post-editor form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;background:#fff;border:1px solid var(--line);padding:25px}.post-editor label{min-width:0}.post-editor label input,.post-editor label select,.post-editor label textarea{width:100%}.post-editor textarea{min-height:90px;resize:vertical}.post-editor .post-form-wide,.post-editor .editor,.post-editor fieldset,.post-editor .form-error,.post-editor>.button{grid-column:1/-1}.post-editor fieldset{border:1px solid var(--line);margin:6px 0 0;padding:10px 15px}.post-editor legend{font-weight:700;font-size:13px}.post-editor select[multiple]{height:100px}.post-editor label small{display:block;color:var(--muted);font-weight:400;margin-top:4px}.post-editor label.check{display:flex;align-items:center;gap:8px}.post-editor label.check input{width:auto;margin:0}.featured-image-field{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;padding:16px;border:1px dashed #abd8d7;border-radius:5px;background:#fbfefe}.featured-image-field>label:first-child{grid-column:1/-1}.featured-image-upload{position:relative;display:flex;align-items:center;justify-content:center;min-height:44px;overflow:hidden;border:1px solid var(--teal);border-radius:3px;background:var(--tint);color:#087b79;font-size:12px;font-weight:800}.featured-image-upload input{position:absolute;inset:0;width:100%;opacity:0;cursor:pointer}.featured-image-upload input:disabled{cursor:wait}.featured-image-preview{grid-column:1/-1;max-width:230px;max-height:150px;border-radius:4px;object-fit:cover}@media(max-width:650px){.post-editor form{grid-template-columns:1fr;padding:18px}.post-editor .post-form-wide,.post-editor .editor,.post-editor fieldset,.post-editor .form-error,.post-editor>.button{grid-column:auto}.featured-image-field{grid-template-columns:1fr}.featured-image-field>label:first-child,.featured-image-preview{grid-column:auto}}
+.post-editor {
+  max-width: 850px;
+}
+.post-editor form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 25px;
+}
+.post-editor label {
+  min-width: 0;
+}
+.post-editor label input,
+.post-editor label select,
+.post-editor label textarea {
+  width: 100%;
+}
+.post-editor textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+.post-editor .post-form-wide,
+.post-editor .editor,
+.post-editor fieldset,
+.post-editor .form-error,
+.post-editor > .button {
+  grid-column: 1/-1;
+}
+.post-editor fieldset {
+  border: 1px solid var(--line);
+  margin: 6px 0 0;
+  padding: 10px 15px;
+}
+.post-editor legend {
+  font-weight: 700;
+  font-size: 13px;
+}
+.post-editor select[multiple] {
+  height: 100px;
+}
+.post-editor label small {
+  display: block;
+  color: var(--muted);
+  font-weight: 400;
+  margin-top: 4px;
+}
+.post-editor label.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.post-editor label.check input {
+  width: auto;
+  margin: 0;
+}
+.featured-image-field {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: end;
+  padding: 16px;
+  border: 1px dashed #abd8d7;
+  border-radius: 5px;
+  background: #fbfefe;
+}
+.featured-image-field > label:first-child {
+  grid-column: 1/-1;
+}
+.featured-image-upload {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  overflow: hidden;
+  border: 1px solid var(--teal);
+  border-radius: 3px;
+  background: var(--tint);
+  color: #087b79;
+  font-size: 12px;
+  font-weight: 800;
+}
+.featured-image-upload input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.featured-image-upload input:disabled {
+  cursor: wait;
+}
+.featured-image-preview {
+  grid-column: 1/-1;
+  max-width: 230px;
+  max-height: 150px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+@media (max-width: 650px) {
+  .post-editor form {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+  .post-editor .post-form-wide,
+  .post-editor .editor,
+  .post-editor fieldset,
+  .post-editor .form-error,
+  .post-editor > .button {
+    grid-column: auto;
+  }
+  .featured-image-field {
+    grid-template-columns: 1fr;
+  }
+  .featured-image-field > label:first-child,
+  .featured-image-preview {
+    grid-column: auto;
+  }
+}

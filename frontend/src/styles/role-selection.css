@@ -1,1 +1,61 @@
-.auth-shell{max-width:940px;margin:0 auto;padding:100px 35px}.auth-shell h1{font-size:58px;letter-spacing:-.06em;margin:0}.auth-shell>p:not(.eyebrow){color:var(--muted);margin-bottom:35px}.role-options{display:grid;grid-template-columns:1fr 1fr;gap:20px}.role-options a{padding:32px;border:1px solid var(--line);min-height:270px}.role-options a:hover{background:var(--navy);color:#fff;border-color:var(--navy)}.role-options span{color:var(--teal);font:12px 'DM Mono',monospace}.role-options h2{margin:60px 0 10px}.role-options p{font-size:13px;line-height:1.6;color:var(--muted)}.role-options a:hover p{color:#c6d7dc}.role-options b{color:var(--teal);font-size:13px}@media(max-width:600px){.auth-shell{padding:60px 25px}.role-options{grid-template-columns:1fr}.auth-shell h1{font-size:45px}}
+.auth-shell {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 100px 35px;
+}
+.auth-shell h1 {
+  font-size: 58px;
+  letter-spacing: -0.06em;
+  margin: 0;
+}
+.auth-shell > p:not(.eyebrow) {
+  color: var(--muted);
+  margin-bottom: 35px;
+}
+.role-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.role-options a {
+  padding: 32px;
+  border: 1px solid var(--line);
+  min-height: 270px;
+}
+.role-options a:hover {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.role-options span {
+  color: var(--teal);
+  font:
+    12px "DM Mono",
+    monospace;
+}
+.role-options h2 {
+  margin: 60px 0 10px;
+}
+.role-options p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.role-options a:hover p {
+  color: #c6d7dc;
+}
+.role-options b {
+  color: var(--teal);
+  font-size: 13px;
+}
+@media (max-width: 600px) {
+  .auth-shell {
+    padding: 60px 25px;
+  }
+  .role-options {
+    grid-template-columns: 1fr;
+  }
+  .auth-shell h1 {
+    font-size: 45px;
+  }
+}

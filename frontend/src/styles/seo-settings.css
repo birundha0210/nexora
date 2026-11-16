@@ -1,1 +1,21 @@
-.settings-page{max-width:760px}.setting-card{background:#fff;border:1px solid var(--line);padding:23px;margin:16px 0}.setting-card h2{font-size:19px;margin:0 0 8px}.setting-card p{color:var(--muted);font-size:14px;line-height:1.7}.setting-card code{color:var(--teal)}
+.settings-page {
+  max-width: 760px;
+}
+.setting-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 23px;
+  margin: 16px 0;
+}
+.setting-card h2 {
+  font-size: 19px;
+  margin: 0 0 8px;
+}
+.setting-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.setting-card code {
+  color: var(--teal);
+}

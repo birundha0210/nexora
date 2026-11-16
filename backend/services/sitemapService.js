@@ -1,26 +1,31 @@
-import Blog from '../models/Blog.js';
+import Blog from "../models/Blog.js";
 
 const escapeXml = (value) =>
-  String(value).replace(/[<>&'"]/g, (character) => ({
-    '<': '&lt;',
-    '>': '&gt;',
-    '&': '&amp;',
-    "'": '&apos;',
-    '"': '&quot;'
-  })[character]);
+  String(value).replace(
+    /[<>&'"]/g,
+    (character) =>
+      ({
+        "<": "&lt;",
+        ">": "&gt;",
+        "&": "&amp;",
+        "'": "&apos;",
+        '"': "&quot;",
+      })[character],
+  );
 
 export async function sitemapXml(baseUrl) {
   const posts = await Blog.find({
-    status: 'published',
-    publishedAt: { $lte: new Date() }
-  }).select('slug updatedAt publishedAt');
+    status: "published",
+    publishedAt: { $lte: new Date() },
+  }).select("slug updatedAt publishedAt");
 
   const urls = posts.map((post) => {
     const lastModified = post.updatedAt ?? post.publishedAt;
     const lastModifiedDate = lastModified ? new Date(lastModified) : null;
-    const lastmod = lastModifiedDate && Number.isFinite(lastModifiedDate.getTime())
-      ? `<lastmod>${lastModifiedDate.toISOString()}</lastmod>`
-      : '';
+    const lastmod =
+      lastModifiedDate && Number.isFinite(lastModifiedDate.getTime())
+        ? `<lastmod>${lastModifiedDate.toISOString()}</lastmod>`
+        : "";
 
     return `<url><loc>${escapeXml(`${baseUrl}/blogs/${encodeURIComponent(post.slug)}`)}</loc>${lastmod}</url>`;
   });
@@ -30,6 +35,6 @@ export async function sitemapXml(baseUrl) {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     `<url><loc>${escapeXml(`${baseUrl}/`)}</loc></url>`,
     ...urls,
-    '</urlset>'
-  ].join('');
+    "</urlset>",
+  ].join("");
 }

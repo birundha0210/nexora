@@ -1,1 +1,7 @@
-import { Router } from 'express'; import { uploadMedia } from '../controllers/mediaController.js'; import { protect } from '../middleware/authMiddleware.js'; import upload from '../middleware/uploadMiddleware.js'; const router = Router(); router.post('/upload', protect, upload.single('image'), uploadMedia); export default router;
+import { Router } from "express";
+import { uploadMedia } from "../controllers/mediaController.js";
+import { protect } from "../middleware/authMiddleware.js";
+import upload from "../middleware/uploadMiddleware.js";
+const router = Router();
+router.post("/upload", protect, upload.single("image"), uploadMedia);
+export default router;

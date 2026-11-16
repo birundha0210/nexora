@@ -1,2 +1,25 @@
-import React from 'react';
-import '../../styles/seo-settings.css'; export default function SEOSettings(){return <section className="settings-page"><p className="eyebrow">DISCOVERABILITY</p><h1>SEO settings</h1><div className="setting-card"><h2>Technical SEO</h2><p>Article metadata is set individually during editing. The API exposes a dynamic XML sitemap at <code>/api/seo/sitemap.xml</code>.</p></div><div className="setting-card"><h2>Analytics integrations</h2><p>Set your Google Analytics and Search Console integrations at deployment through the hosting environment. Tracking identifiers are intentionally not committed to source control.</p></div></section>}
+import React from "react";
+import "../../styles/seo-settings.css";
+export default function SEOSettings() {
+  return (
+    <section className="settings-page">
+      <p className="eyebrow">DISCOVERABILITY</p>
+      <h1>SEO settings</h1>
+      <div className="setting-card">
+        <h2>Technical SEO</h2>
+        <p>
+          Article metadata is set individually during editing. The API exposes a
+          dynamic XML sitemap at <code>/api/seo/sitemap.xml</code>.
+        </p>
+      </div>
+      <div className="setting-card">
+        <h2>Analytics integrations</h2>
+        <p>
+          Set your Google Analytics and Search Console integrations at
+          deployment through the hosting environment. Tracking identifiers are
+          intentionally not committed to source control.
+        </p>
+      </div>
+    </section>
+  );
+}

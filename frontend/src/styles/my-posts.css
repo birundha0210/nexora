@@ -1,1 +1,4 @@
-.management .page-top{border-bottom:1px solid var(--line);padding-bottom:18px}
+.management .page-top {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+}

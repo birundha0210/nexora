@@ -1,1 +1,3 @@
-.public-main{min-height:calc(100vh - 76px)}
+.public-main {
+  min-height: calc(100vh - 76px);
+}

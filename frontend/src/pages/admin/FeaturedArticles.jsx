@@ -1,17 +1,16 @@
-
-import React, { useEffect, useState } from 'react';
-import api from '../../services/api';
-import '../../styles/featured-articles.css';
+import React, { useEffect, useState } from "react";
+import api from "../../services/api";
+import "../../styles/featured-articles.css";
 
 export default function FeaturedArticles() {
   const [posts, setPosts] = useState([]);
 
   const load = async () => {
     try {
-      const response = await api.get('/blogs');
+      const response = await api.get("/blogs");
       setPosts(response.data.posts || []);
     } catch (error) {
-      console.error('Failed to load blogs:', error);
+      console.error("Failed to load blogs:", error);
     }
   };
 
@@ -22,12 +21,12 @@ export default function FeaturedArticles() {
   const toggle = async (post) => {
     try {
       await api.put(`/blogs/${post._id}`, {
-        featured: !post.featured
+        featured: !post.featured,
       });
 
       await load();
     } catch (error) {
-      console.error('Failed to update featured article:', error);
+      console.error("Failed to update featured article:", error);
     }
   };
 
@@ -45,19 +44,15 @@ export default function FeaturedArticles() {
             <span>
               <b>{post.title}</b>
               <small>
-                {post.featured
-                  ? 'Featured on homepage'
-                  : 'Not featured'}
+                {post.featured ? "Featured on homepage" : "Not featured"}
               </small>
             </span>
 
             <button
-              className={post.featured ? 'selected' : ''}
+              className={post.featured ? "selected" : ""}
               onClick={() => toggle(post)}
             >
-              {post.featured
-                ? 'Remove feature'
-                : 'Feature article'}
+              {post.featured ? "Remove feature" : "Feature article"}
             </button>
           </div>
         ))}
